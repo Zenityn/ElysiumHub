@@ -533,6 +533,147 @@ function lib:CreateMain(gametitle)
 					end
 				end
 			end)
+			function pages:CreateDropdown(dropdowntext, list, callback)
+				
+				list = list or {}
+				callback = callback or function() end
+				local Dropdown = Instance.new("Frame")
+				local DropdownCorner = Instance.new("UICorner")
+				local DropdownListing = Instance.new("UIListLayout")
+				local Choose = Instance.new("Frame")
+				local ChooseCorner = Instance.new("UICorner")
+				local ChooseTitle = Instance.new("TextLabel")
+				local ChooseArrow = Instance.new("ImageButton")
+				local OptionHolder = Instance.new("Frame")
+				local OptionHolderCorner = Instance.new("UICorner")
+				local OptionList = Instance.new("Frame")
+				local OptionListListing = Instance.new("UIListLayout")
+
+				Dropdown.Name = "Dropdown"
+				Dropdown.Parent = Page
+				Dropdown.BackgroundColor3 = Color3.fromRGB(18, 22, 29)
+				Dropdown.Position = UDim2.new(0, 0, 0.202020198, 0)
+				Dropdown.Size = UDim2.new(1, 0, -0.0252525248, 40)
+
+				DropdownCorner.CornerRadius = UDim.new(0, 3)
+				DropdownCorner.Name = "DropdownCorner"
+				DropdownCorner.Parent = Dropdown
+
+				DropdownListing.Name = "DropdownListing"
+				DropdownListing.Parent = Dropdown
+				DropdownListing.SortOrder = Enum.SortOrder.LayoutOrder
+				
+				local dropped = false
+				Choose.Name = "Choose"
+				Choose.Parent = Dropdown
+				Choose.BackgroundColor3 = Color3.fromRGB(18, 22, 29)
+				Choose.BorderColor3 = Color3.fromRGB(27, 42, 53)
+				Choose.Position = UDim2.new(0, 0, -0.200000003, 0)
+				Choose.Size = UDim2.new(1, 0, 1, 0)
+
+				ChooseCorner.CornerRadius = UDim.new(0, 3)
+				ChooseCorner.Name = "ChooseCorner"
+				ChooseCorner.Parent = Choose
+				ChooseTitle.Name = "ChooseTitle"
+				ChooseTitle.Parent = Choose
+				ChooseTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ChooseTitle.BackgroundTransparency = 1.000
+				ChooseTitle.Position = UDim2.new(0.025999967, 0, 0, 0)
+				ChooseTitle.Size = UDim2.new(0, 189, 0, 30)
+				ChooseTitle.Font = Enum.Font.GothamSemibold
+				ChooseTitle.Text = dropdowntext
+				ChooseTitle.TextColor3 = Color3.fromRGB(201, 201, 201)
+				ChooseTitle.TextSize = 12.000
+				ChooseTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+				ChooseArrow.Name = "ChooseArrow"
+				ChooseArrow.Parent = Choose
+				ChooseArrow.AnchorPoint = Vector2.new(0.5, 0.5)
+				ChooseArrow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ChooseArrow.BackgroundTransparency = 1.000
+				ChooseArrow.Position = UDim2.new(0.955082715, 0, 0.5, 0)
+				ChooseArrow.Size = UDim2.new(0, 20, 0, 20)
+				ChooseArrow.Image = "http://www.roblox.com/asset/?id=6031094687"
+				ChooseArrow.ImageColor3 = Color3.fromRGB(34, 42, 56)
+
+				OptionHolder.Name = "OptionHolder"
+				OptionHolder.Parent = Dropdown
+				OptionHolder.BackgroundColor3 = Color3.fromRGB(18, 22, 29)
+				OptionHolder.BorderSizePixel = 0
+				OptionHolder.Position = UDim2.new(0, 0, 1, 0)
+				OptionHolder.Size = UDim2.new(1, 0, 2.70000005, 0)
+
+				OptionHolderCorner.Name = "OptionHolderCorner"
+				OptionHolderCorner.Parent = OptionHolder
+
+				OptionList.Name = "OptionList"
+				OptionList.Parent = OptionHolder
+				OptionList.AnchorPoint = Vector2.new(0.5, 0.5)
+				OptionList.BackgroundColor3 = Color3.fromRGB(18, 22, 29)
+				OptionList.BorderSizePixel = 0
+				OptionList.Position = UDim2.new(0.5, 0, 0.5, 0)
+				OptionList.Size = UDim2.new(1, 0, 1, 0)
+
+				OptionListListing.Name = "OptionListListing"
+				OptionListListing.Parent = OptionList
+				OptionListListing.HorizontalAlignment = Enum.HorizontalAlignment.Center
+				OptionListListing.SortOrder = Enum.SortOrder.LayoutOrder
+				OptionListListing.Padding = UDim.new(0, 4)
+				
+				Choose.InputBegan:Connect(function(inp)
+					if inp.UserInputType == Enum.UserInputType.MouseButton1 then 
+						if not dropped then
+							Dropdown:TweenSize(UDim2.new(1, -7,0, DropdownListing.AbsoluteContentSize.Y), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, .4, true)
+							TweenService:Create(ChooseArrow, TweenInfo.new(.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 180}, true):Play()
+							dropped = true
+						else
+							TweenService:Create(ChooseArrow, TweenInfo.new(.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Rotation = 0}, true):Play()
+							Dropdown:TweenSize(UDim2.new(1, 0,0, 30), Enum.EasingDirection.Out, Enum.EasingStyle.Quad, .4)
+							dropped = false 
+						end
+					end
+				end)
+				
+				for i,v in next, list do
+					local DropdownButton = Instance.new("TextButton")
+					local DropdownButtonCorner = Instance.new("UICorner")
+					local DropdownButtonText = Instance.new("TextLabel")
+
+					DropdownButton.Name = "DropdownButton"
+					DropdownButton.Parent = OptionList
+					DropdownButton.BackgroundColor3 = Color3.fromRGB(24, 29, 39)
+					DropdownButton.Size = UDim2.new(1, -20, 0, 30)
+					DropdownButton.AutoButtonColor = false
+					DropdownButton.Font = Enum.Font.SourceSans
+					DropdownButton.Text = ""
+					DropdownButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+					DropdownButton.TextSize = 14.000
+
+					DropdownButtonCorner.CornerRadius = UDim.new(0, 3)
+					DropdownButtonCorner.Name = "DropdownButtonCorner"
+					DropdownButtonCorner.Parent = DropdownButton
+
+					DropdownButtonText.Name = "DropdownButtonText"
+					DropdownButtonText.Parent = DropdownButton
+					DropdownButtonText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+					DropdownButtonText.BackgroundTransparency = 1.000
+					DropdownButtonText.Position = UDim2.new(0.00196394674, 0, 0, 0)
+					DropdownButtonText.Size = UDim2.new(0, 422, 0, 30)
+					DropdownButtonText.Font = Enum.Font.GothamSemibold
+					DropdownButtonText.Text = "Dropdown Button"
+					DropdownButtonText.TextColor3 = Color3.fromRGB(201, 201, 201)
+					DropdownButtonText.TextSize = 12.000
+
+					DropdownButton.MouseButton1Click:Connect(function()
+						callback(v)
+						dropped = false
+						TweenService:Create(ChooseArrow, TweenInfo.new(.4, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),{Rotation = 0}):Play()
+						Dropdown:TweenSize(UDim2.new(1, 0,0, 30), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .4, true)
+						ChooseTitle.Text = ChooseTitle..": "..v
+					end)
+					OptionHolder:TweenSize(UDim2.new(1, 0, 0, OptionList.AbsoluteContentSize.Y + 15), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .4, true)
+				end 
+			end
 		end
 		return pages
 	end
