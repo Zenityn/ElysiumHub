@@ -1,15 +1,9 @@
 	local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubLib", true))()
-	local Main = library:CreateMain('Global')
-	local Visuals = Main:CreateTab('Visuals')
-	local Combat = Main:CreateTab('Combat')
-	local LocalPlayer = Main:CreateTab('Local Player')
-    
-    Visuals:CreateLabel('Nothing to see here yet. Check again soon!'), function()
-    
-    end)
-    Combat:CreateLabel('Nothing to see here yet. Check again soon!'), function()
-    
-    end)
-    LocalPlayer:CreateLabel('Nothing to see here yet. Check again soon!'), function()
-    
-    end)
+local Main = library:CreateMain('Global')
+local Visuals = Main:CreateTab('Visuals')
+local Combat = Main:CreateTab('Combat')
+local LocalPlayer = Main:CreateTab('Local Player')
+
+Visuals:CreateLabel('Nothing to see here yet. Check again soon!')
+Combat:CreateLabel('Nothing to see here yet. Check again soon!')
+LocalPlayer:CreateLabel('Nothing to see here yet. Check again soon!')
