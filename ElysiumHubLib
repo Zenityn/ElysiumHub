@@ -183,7 +183,7 @@ function lib:CreateMain(gametitle)
 		Tab.BackgroundTransparency = 1.000
 		Tab.BorderSizePixel = 0
 		Tab.Position = UDim2.new(-0.0345211588, 0, 0, 0)
-		Tab.Size = UDim2.new(0, 0, 0, 0)
+		Tab.Size = UDim2.new(0, 0, 0, 22)
 		Tab.Font = Enum.Font.GothamSemibold
 		Tab.Text = tabname
 		Tab.TextColor3 = Color3.fromRGB(34, 42, 56)
