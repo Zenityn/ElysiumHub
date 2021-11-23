@@ -1,13 +1,13 @@
 
 local ElysiumPreLoad = Instance.new("ScreenGui")
 local GameSupported = Instance.new("Frame")
-local PreNotifBackCorner = Instance.new("UICorner")
-local PreNotifText = Instance.new("TextLabel")
+local GameSupportedCorner = Instance.new("UICorner")
+local GameSupportedText = Instance.new("TextLabel")
 local No = Instance.new("ImageButton")
 local Yes = Instance.new("ImageButton")
 local GameNotSupported = Instance.new("Frame")
 local GameNotSupportedCorner = Instance.new("UICorner")
-local PreNotifText_2 = Instance.new("TextLabel")
+local GameNotSupportedText = Instance.new("TextLabel")
 local No_2 = Instance.new("ImageButton")
 local Yes_2 = Instance.new("ImageButton")
 
@@ -23,21 +23,21 @@ GameSupported.Position = UDim2.new(0.5, 0, 0.5, 0)
 GameSupported.Size = UDim2.new(0, 267, 0, 83)
 GameSupported.Visible = false
 
-PreNotifBackCorner.CornerRadius = UDim.new(0, 4)
-PreNotifBackCorner.Name = "PreNotifBackCorner"
-PreNotifBackCorner.Parent = GameSupported
+GameSupportedCorner.CornerRadius = UDim.new(0, 4)
+GameSupportedCorner.Name = "GameSupportedCorner"
+GameSupportedCorner.Parent = GameSupported
 
-PreNotifText.Name = "PreNotifText"
-PreNotifText.Parent = GameSupported
-PreNotifText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PreNotifText.BackgroundTransparency = 1.000
-PreNotifText.Position = UDim2.new(0.0299625471, 0, 0, 0)
-PreNotifText.Size = UDim2.new(0, 250, 0, 50)
-PreNotifText.Font = Enum.Font.GothamSemibold
-PreNotifText.Text = "Game supported! Do you want to load Elysium Hub?"
-PreNotifText.TextColor3 = Color3.fromRGB(201, 201, 201)
-PreNotifText.TextSize = 12.000
-PreNotifText.TextWrapped = true
+GameSupportedText.Name = "GameSupportedText"
+GameSupportedText.Parent = GameSupported
+GameSupportedText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameSupportedText.BackgroundTransparency = 1.000
+GameSupportedText.Position = UDim2.new(0.0299625471, 0, 0, 0)
+GameSupportedText.Size = UDim2.new(0, 250, 0, 50)
+GameSupportedText.Font = Enum.Font.GothamSemibold
+GameSupportedText.Text = "Game supported! Do you want to load Elysium Hub?"
+GameSupportedText.TextColor3 = Color3.fromRGB(201, 201, 201)
+GameSupportedText.TextSize = 12.000
+GameSupportedText.TextWrapped = true
 
 No.Name = "No"
 No.Parent = GameSupported
@@ -71,17 +71,17 @@ GameNotSupportedCorner.CornerRadius = UDim.new(0, 4)
 GameNotSupportedCorner.Name = "GameNotSupportedCorner"
 GameNotSupportedCorner.Parent = GameNotSupported
 
-PreNotifText_2.Name = "PreNotifText"
-PreNotifText_2.Parent = GameNotSupported
-PreNotifText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PreNotifText_2.BackgroundTransparency = 1.000
-PreNotifText_2.Position = UDim2.new(0.0299625471, 0, 0, 0)
-PreNotifText_2.Size = UDim2.new(0, 250, 0, 50)
-PreNotifText_2.Font = Enum.Font.GothamSemibold
-PreNotifText_2.Text = "Game not supported! Do you want to load Elysium Hub Gloal?"
-PreNotifText_2.TextColor3 = Color3.fromRGB(201, 201, 201)
-PreNotifText_2.TextSize = 12.000
-PreNotifText_2.TextWrapped = true
+GameNotSupportedText.Name = "GameNotSupportedText"
+GameNotSupportedText.Parent = GameNotSupported
+GameNotSupportedText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GameNotSupportedText.BackgroundTransparency = 1.000
+GameNotSupportedText.Position = UDim2.new(0.0299625471, 0, 0, 0)
+GameNotSupportedText.Size = UDim2.new(0, 250, 0, 50)
+GameNotSupportedText.Font = Enum.Font.GothamSemibold
+GameNotSupportedText.Text = "Game not supported! Do you want to load Elysium Hub Gloal?"
+GameNotSupportedText.TextColor3 = Color3.fromRGB(201, 201, 201)
+GameNotSupportedText.TextSize = 12.000
+GameNotSupportedText.TextWrapped = true
 
 No_2.Name = "No"
 No_2.Parent = GameNotSupported
@@ -105,19 +105,20 @@ Yes_2.ImageColor3 = Color3.fromRGB(34, 42, 56)
 
 -- Scripts:
 
-local function WKBLB_fake_script() -- No.NoScript 
+local function XRALDX_fake_script() -- No.NoScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
+		game.CoreGui.ElysiumPreLoad:Destroy()
 	end)
 end
-coroutine.wrap(WKBLB_fake_script)()
-local function PHYGNYA_fake_script() -- Yes.YesScript 
+coroutine.wrap(XRALDX_fake_script)()
+local function IBJBMGJ_fake_script() -- Yes.YesScript 
 	local script = Instance.new('LocalScript', Yes)
 
 	local ID = game.GameId
 	script.Parent.MouseButton1Click:Connect(function()
+		game.CoreGui.ElysiumPreLoad:Destroy()
 		if ID == '6284583030' then
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubPSX", true))()
 		end
@@ -126,25 +127,25 @@ local function PHYGNYA_fake_script() -- Yes.YesScript
 		end
 	end)
 end
-coroutine.wrap(PHYGNYA_fake_script)()
-local function VJTETOX_fake_script() -- No_2.NoScript 
+coroutine.wrap(IBJBMGJ_fake_script)()
+local function NSNNJO_fake_script() -- No_2.NoScript 
 	local script = Instance.new('LocalScript', No_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
+		game.CoreGui.ElysiumPreLoad:Destroy()
 	end)
 end
-coroutine.wrap(VJTETOX_fake_script)()
-local function RWZUNU_fake_script() -- Yes_2.YesScript 
+coroutine.wrap(NSNNJO_fake_script)()
+local function UTXDWPF_fake_script() -- Yes_2.YesScript 
 	local script = Instance.new('LocalScript', Yes_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
+		game.CoreGui.ElysiumPreLoad:Destroy()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubGlobal", true))()
 	end)
 end
-coroutine.wrap(RWZUNU_fake_script)()
-local function PPMJNP_fake_script() -- ElysiumPreLoad.PreLoadScript 
+coroutine.wrap(UTXDWPF_fake_script)()
+local function HHDS_fake_script() -- ElysiumPreLoad.PreLoadScript 
 	local script = Instance.new('LocalScript', ElysiumPreLoad)
 
 	script.Parent.GameSupported.Visible = false
@@ -165,4 +166,4 @@ local function PPMJNP_fake_script() -- ElysiumPreLoad.PreLoadScript
 		script.Parent.GameNotSupported.Visible = true
 	end
 end
-coroutine.wrap(PPMJNP_fake_script)()
+coroutine.wrap(HHDS_fake_script)()
