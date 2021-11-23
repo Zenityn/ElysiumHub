@@ -120,10 +120,10 @@ local function IBJBMGJ_fake_script() -- Yes.YesScript
 	script.Parent.MouseButton1Click:Connect(function()
 		game.CoreGui.ElysiumPreLoad:Destroy()
 		if ID == '6284583030' then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubPSX", true))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubPSX", true))
 		end
 		if ID == '2788229376' then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubDH", true))()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubDH", true))
 		end
 	end)
 end
@@ -141,7 +141,7 @@ local function UTXDWPF_fake_script() -- Yes_2.YesScript
 
 	script.Parent.MouseButton1Click:Connect(function()
 		game.CoreGui.ElysiumPreLoad:Destroy()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubGlobal", true))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubGlobal", true))
 	end)
 end
 coroutine.wrap(UTXDWPF_fake_script)()
