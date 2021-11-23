@@ -1,4 +1,4 @@
-	local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubLib", true))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubLib", true))()
 local Main = library:CreateMain('Global')
 local Visuals = Main:CreateTab('Visuals')
 local Combat = Main:CreateTab('Combat')
