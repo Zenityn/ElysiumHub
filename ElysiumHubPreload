@@ -1,28 +1,34 @@
 
 local ElysiumPreLoad = Instance.new("ScreenGui")
-local PreNotifBack = Instance.new("Frame")
+local GameSupported = Instance.new("Frame")
 local PreNotifBackCorner = Instance.new("UICorner")
 local PreNotifText = Instance.new("TextLabel")
 local No = Instance.new("ImageButton")
 local Yes = Instance.new("ImageButton")
+local GameNotSupported = Instance.new("Frame")
+local GameNotSupportedCorner = Instance.new("UICorner")
+local PreNotifText_2 = Instance.new("TextLabel")
+local No_2 = Instance.new("ImageButton")
+local Yes_2 = Instance.new("ImageButton")
 
 ElysiumPreLoad.Name = "ElysiumPreLoad"
-ElysiumPreLoad.Parent = game.CoreGui
+ElysiumPreLoad.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ElysiumPreLoad.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-PreNotifBack.Name = "PreNotifBack"
-PreNotifBack.Parent = ElysiumPreLoad
-PreNotifBack.AnchorPoint = Vector2.new(0.5, 0.5)
-PreNotifBack.BackgroundColor3 = Color3.fromRGB(13, 16, 23)
-PreNotifBack.Position = UDim2.new(0.5, 0, 0.5, 0)
-PreNotifBack.Size = UDim2.new(0, 267, 0, 83)
+GameSupported.Name = "GameSupported"
+GameSupported.Parent = ElysiumPreLoad
+GameSupported.AnchorPoint = Vector2.new(0.5, 0.5)
+GameSupported.BackgroundColor3 = Color3.fromRGB(13, 16, 23)
+GameSupported.Position = UDim2.new(0.5, 0, 0.5, 0)
+GameSupported.Size = UDim2.new(0, 267, 0, 83)
+GameSupported.Visible = false
 
 PreNotifBackCorner.CornerRadius = UDim.new(0, 4)
 PreNotifBackCorner.Name = "PreNotifBackCorner"
-PreNotifBackCorner.Parent = PreNotifBack
+PreNotifBackCorner.Parent = GameSupported
 
 PreNotifText.Name = "PreNotifText"
-PreNotifText.Parent = PreNotifBack
+PreNotifText.Parent = GameSupported
 PreNotifText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PreNotifText.BackgroundTransparency = 1.000
 PreNotifText.Position = UDim2.new(0.0299625471, 0, 0, 0)
@@ -34,7 +40,7 @@ PreNotifText.TextSize = 12.000
 PreNotifText.TextWrapped = true
 
 No.Name = "No"
-No.Parent = PreNotifBack
+No.Parent = GameSupported
 No.AnchorPoint = Vector2.new(0.5, 0.5)
 No.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 No.BackgroundTransparency = 1.000
@@ -44,7 +50,7 @@ No.Image = "http://www.roblox.com/asset/?id=6031094678"
 No.ImageColor3 = Color3.fromRGB(34, 42, 56)
 
 Yes.Name = "Yes"
-Yes.Parent = PreNotifBack
+Yes.Parent = GameSupported
 Yes.AnchorPoint = Vector2.new(0.5, 0.5)
 Yes.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Yes.BackgroundTransparency = 1.000
@@ -53,56 +59,110 @@ Yes.Size = UDim2.new(0, 22, 0, 22)
 Yes.Image = "http://www.roblox.com/asset/?id=6031094667"
 Yes.ImageColor3 = Color3.fromRGB(34, 42, 56)
 
+GameNotSupported.Name = "GameNotSupported"
+GameNotSupported.Parent = ElysiumPreLoad
+GameNotSupported.AnchorPoint = Vector2.new(0.5, 0.5)
+GameNotSupported.BackgroundColor3 = Color3.fromRGB(13, 16, 23)
+GameNotSupported.Position = UDim2.new(0.5, 0, 0.5, 0)
+GameNotSupported.Size = UDim2.new(0, 267, 0, 83)
+GameNotSupported.Visible = false
+
+GameNotSupportedCorner.CornerRadius = UDim.new(0, 4)
+GameNotSupportedCorner.Name = "GameNotSupportedCorner"
+GameNotSupportedCorner.Parent = GameNotSupported
+
+PreNotifText_2.Name = "PreNotifText"
+PreNotifText_2.Parent = GameNotSupported
+PreNotifText_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+PreNotifText_2.BackgroundTransparency = 1.000
+PreNotifText_2.Position = UDim2.new(0.0299625471, 0, 0, 0)
+PreNotifText_2.Size = UDim2.new(0, 250, 0, 50)
+PreNotifText_2.Font = Enum.Font.GothamSemibold
+PreNotifText_2.Text = "Game not supported! Do you want to load Elysium Hub Gloal?"
+PreNotifText_2.TextColor3 = Color3.fromRGB(201, 201, 201)
+PreNotifText_2.TextSize = 12.000
+PreNotifText_2.TextWrapped = true
+
+No_2.Name = "No"
+No_2.Parent = GameNotSupported
+No_2.AnchorPoint = Vector2.new(0.5, 0.5)
+No_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+No_2.BackgroundTransparency = 1.000
+No_2.Position = UDim2.new(0.569999993, 0, 0.727759004, 0)
+No_2.Size = UDim2.new(0, 22, 0, 22)
+No_2.Image = "http://www.roblox.com/asset/?id=6031094678"
+No_2.ImageColor3 = Color3.fromRGB(34, 42, 56)
+
+Yes_2.Name = "Yes"
+Yes_2.Parent = GameNotSupported
+Yes_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Yes_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Yes_2.BackgroundTransparency = 1.000
+Yes_2.Position = UDim2.new(0.430000007, 0, 0.727759004, 0)
+Yes_2.Size = UDim2.new(0, 22, 0, 22)
+Yes_2.Image = "http://www.roblox.com/asset/?id=6031094667"
+Yes_2.ImageColor3 = Color3.fromRGB(34, 42, 56)
+
 -- Scripts:
 
-local function XCIOQLN_fake_script() -- No.NoScript 
+local function WKBLB_fake_script() -- No.NoScript 
 	local script = Instance.new('LocalScript', No)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
 	end)
 end
-coroutine.wrap(XCIOQLN_fake_script)()
-local function ZKAX_fake_script() -- Yes.YesScript 
+coroutine.wrap(WKBLB_fake_script)()
+local function PHYGNYA_fake_script() -- Yes.YesScript 
 	local script = Instance.new('LocalScript', Yes)
+
+	local ID = game.GameId
+	script.Parent.MouseButton1Click:Connect(function()
+		if ID == '6284583030' then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubPSX", true))()
+		end
+		if ID == '2788229376' then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubDH", true))()
+		end
+	end)
+end
+coroutine.wrap(PHYGNYA_fake_script)()
+local function VJTETOX_fake_script() -- No_2.NoScript 
+	local script = Instance.new('LocalScript', No_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
-		local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubLib", true))()
-		local Main = library:CreateMain('Game Text')
-		local tab1 = Main:CreateTab('Tab 1')
-		local tab2 = Main:CreateTab('Tab 2')
-
-		tab1:CreateButton('Button', function()
-
-		end)
-		tab1:CreateToggle('Toggle Button', function()
-
-		end)
-		tab1:CreateSlider('Slider', '0', '100', '50', '1', function()
-
-		end)
-		tab1:CreateBind('Bind', Enum.KeyCode.E, function(v)
-			print(v)
-		end)
-		tab1:CreateLabel('Label', function()
-
-		end)
-		tab2:CreateButton('Button 2', function()
-
-		end)
-		tab2:CreateToggle('Toggle Button 2', function()
-
-		end)
-		tab2:CreateSlider('Slider 2', '0', '100', '50', '1', function()
-
-		end)
-		tab2:CreateBind('Bind 2', Enum.KeyCode.E, function(v)
-			print(v)
-		end)
-		tab2:CreateLabel('Label 2', function()
-
-		end)
 	end)
 end
-coroutine.wrap(ZKAX_fake_script)()
+coroutine.wrap(VJTETOX_fake_script)()
+local function RWZUNU_fake_script() -- Yes_2.YesScript 
+	local script = Instance.new('LocalScript', Yes_2)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.PreNotifBack.Parent.Parent.ElysiumPreLoad:Destroy()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Bopituhhhhhhhhhhh/ElysiumHub/main/ElysiumHubGlobal", true))()
+	end)
+end
+coroutine.wrap(RWZUNU_fake_script)()
+local function PPMJNP_fake_script() -- ElysiumPreLoad.PreLoadScript 
+	local script = Instance.new('LocalScript', ElysiumPreLoad)
+
+	script.Parent.GameSupported.Visible = false
+	script.Parent.GameNotSupported.Visible = false
+	
+	local ID = game.GameId
+	
+	if ID == {
+		'6284583030',
+		'2788229376',
+		'4872321990',
+		'286090429',
+		'2377868063',
+		'6872265039',} then
+		script.Parent.GameSupported.Visible = true
+		script.Parent.GameNotSupported.Visible = false else
+		script.Parent.GameSupported.Visible = false
+		script.Parent.GameNotSupported.Visible = true
+	end
+end
+coroutine.wrap(PPMJNP_fake_script)()
