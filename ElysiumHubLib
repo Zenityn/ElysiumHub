@@ -152,6 +152,7 @@ function lib:CreateMain(gametitle)
 	AllTabBtnsListing.FillDirection = Enum.FillDirection.Horizontal
 	AllTabBtnsListing.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	AllTabBtnsListing.SortOrder = Enum.SortOrder.LayoutOrder
+	AllTabBtnsListing.Padding = UDim.new(0, 6)
 	
 	AllPages.Name = "AllPages"
 	AllPages.Parent = UIBack
