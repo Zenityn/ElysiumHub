@@ -794,14 +794,4 @@ function lib:CreateMain(gametitle)
 	end
 	return tabs
 end
-
-local main = lib:CreateMain("bit")
-local a = main:CreateTab("mhm")
-a:AddDropdown("Bruh", "1", {"1", "2", "3", 4, 5}, function(option)
-	print(option)
-end)
-a:AddTextbox("Bruh Text", "default", function(text)
-	print("on enter or lost focus,", text)
-end)
-
 return lib
